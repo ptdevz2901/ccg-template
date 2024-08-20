@@ -1,0 +1,247 @@
+.about {
+    padding: 10rem 0;
+}
+
+.about h2 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--text-second);
+    text-align: center;
+}
+
+.about_company {
+    position: relative;
+    text-align: center;
+}
+
+.about_company .about_company-gradient {
+    position: absolute;
+    top: -19rem;
+    right: -10rem;
+    z-index: -1;
+}
+
+.about_company .about_company-gradient img {
+    width: 100%;
+    height: 100%;
+}
+
+.about_company .about_company-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+}
+
+.about_company .about_company-des {
+    font-size: 1.9rem;
+    font-weight: 300;
+    margin: 0 auto;
+}
+
+.about_company-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6rem;
+    gap: 8rem;
+}
+
+.about_company-list .about_company-card {
+    position: relative;
+    background-color: var(--text-white);
+    padding: 5rem 8rem 8rem 8rem;
+    border-radius: 1.6rem;
+    margin-top: 6rem;
+    box-shadow: 0 0.8rem 4.9rem #262D7614;
+}
+
+.about_company-list .about_company-card .abount_company-cardImg {
+    position: absolute;
+    top: -7rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about_company-list .about_company-card .abount_company-cardImg img {
+    width: 100%;
+}
+
+.about_company-list .about_company-card .abount_company-content {
+    text-align: center;
+}
+
+.about_company-list .about_company-card .abount_company-content h3 {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.about_company-list .about_company-card .abount_company-content p {
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.about_company-des-wrapper {
+    margin-top: 6rem;
+}
+
+.about_company-des-wrapper .about_company-des {
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.about_service {
+    position: relative;
+    margin-top: 10rem;
+}
+
+.about_service .about_service-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8rem;
+    gap: 4rem;
+}
+
+.about_service .about_service-section.reverse {
+    flex-direction: row-reverse;
+}
+
+
+
+.about_service .about_service-section .about_service-section-content {
+    width: 55%;
+    position: relative;
+}
+
+.about_service .about_service-section .about_service-section-content h3 {
+    font-size: 2.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.about_service .about_service-section .about_service-section-content p {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+}
+
+.about_service .about_service-section .dot {
+    position: absolute;
+    width: 6rem;
+    height: 6rem;
+    background-color: #F4B767;
+    border-radius: 100%;
+}
+
+.about_service .about_service-section .dot.topleft {
+    top: -5rem;
+    left: -2rem;
+}
+
+.about_service .about_service-section .dot.topRight {
+    top: -5rem;
+    right: -2rem;
+}
+
+.about_service .about_service-section .dot.small {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.about_service .about_service-section .dot.bottomRight {
+    bottom: -5rem;
+    right: 0rem;
+}
+
+.about_service .about_service-section .about_service-section-img {
+    position: relative;
+    width: 45%;
+}
+
+.about_service .about_service-section .about_service-section-img img {
+    width: 100%;
+}
+
+.about_service .about_service-section .about_service-section-img .rectagle {
+    position: absolute;
+    width: 11.1rem;
+    height: 11.1rem;
+    border-radius: 1.6rem;
+}
+
+.about_service .about_service-section .about_service-section-img .rectagle.topleft {
+    top: -1.5rem;
+    left: -1.5rem;
+    background-color: #7EBCDC;
+    z-index: -1;
+}
+
+.about_service .about_service-section .about_service-section-img .rectagle.large.bottomRight {
+    width: 18.4rem;
+    height: 18.4rem;
+    background-color: #F3AC50;
+    bottom: -2rem;
+    right: -2rem;
+    z-index: -1;
+}
+
+.about_service .about_service-gradient {
+    position: absolute;
+    right: -10rem;
+    z-index: -1;
+}
+
+.about_service .about_service-gradient img {
+    width: 100%;
+    height: 100%;
+}
+
+.about-our-course {
+    width: 100%;
+    margin-top: 6rem;
+    padding: 8rem 0
+}
+
+.about-our-course img {
+    width: 100%;
+}
+
+.about-csv {
+    margin-top: 6rem;
+}
+
+.about-csv .about-csv-des {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    text-align: center;
+    width: 40%;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.about-csv .about-csv-content {
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--text-primary);
+    line-height: 3rem;
+}
+
+.about-csv_list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about-csv_list .about-csv_item {
+    width: calc(25% - 2rem);
+}
+
+.about-csv_list .about-csv_item img {
+    width: 100%;
+}

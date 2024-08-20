@@ -1,0 +1,39 @@
+.media {
+    padding: 10rem 0;
+}
+
+.media .media_title {
+    font-weight: 600;
+    font-size: 4.6rem;
+    text-align: center;
+}
+
+.media .media-list {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.media .media-list .media-item {
+    position: relative;
+    width: calc(33% - 2rem);
+    height: 21.5rem;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.media .media-list .media-item .media-img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+}
+
+.media .media-list .media-item .media-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.6rem;
+    height: 3.3rem;
+}

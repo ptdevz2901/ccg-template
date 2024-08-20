@@ -1,8 +1,12 @@
 .header-wrapper {
-    padding: 2rem var(--padding-wrapper);
+    padding: 2rem 0;
     display: flex;
     justify-content: space-between;
+}
+
+.border-header {
     border-bottom: 1px solid var(--border-header);
+
 }
 
 .header-wrapper .header_logo img {

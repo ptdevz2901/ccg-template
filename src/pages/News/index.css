@@ -1,0 +1,19 @@
+.news {
+    padding: 10rem 0;
+}
+
+.news-gradient {
+    position: absolute;
+    right: 0;
+    top: -2rem;
+    z-index: -1;
+    height: 100vh;
+}
+
+.home_blog-card-vertical.news {
+    width: 45% !important;
+}
+
+.home_blog-card-list.news {
+    width: 54% !important;
+}

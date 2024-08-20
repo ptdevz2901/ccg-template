@@ -1,0 +1,27 @@
+.pagination-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+
+.pagination-custom li {
+    list-style: none;
+    color: var(--text-pagination);
+    font-weight: 600;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pagination-custom li.selected {
+    background-color: #7EBCDC;
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 100%;
+    color: var(--text-second);
+}

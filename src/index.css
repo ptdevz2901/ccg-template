@@ -35,6 +35,7 @@ body {
   --text-accent: #7EBCDC;
   --text-link: #3366FF;
   --text-header: #7B86A4;
+  --text-pagination: #727272;
   --background-blur: #45CDF7;
 
   --padding-wrapper: 8rem;
@@ -54,4 +55,13 @@ body {
   width: 100%;
   max-width: var(--width-container);
   margin: auto;
+}
+
+.highlight {
+  color: var(--text-accent);
+}
+
+
+.mt-12 {
+  margin-top: 12rem;
 }

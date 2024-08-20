@@ -9,14 +9,40 @@ import {
   useRoutes,
   Routes,
 } from "react-router-dom";
-import { Home } from './pages/Home';
 import { Footer } from './layout/Footer';
+import { Home } from './pages/Home/Home';
+import { About } from './pages/About/About';
+import { Brand } from './pages/Brand/Brand';
+import { News } from './pages/News/News';
+import { Media } from './pages/Media/Media';
+import { Contract } from './pages/Contract/Contract';
+import { PATH } from './consts/path';
 
 const routes = [
   {
-    path: "/",
+    path: PATH.HOME,
     element: <Home />,
   },
+  {
+    path: PATH.ABOUT,
+    element: <About />,
+  },
+  {
+    path: PATH.NEWS,
+    element: <News />
+  },
+  {
+    path: PATH.BRAND,
+    element: <Brand />
+  },
+  {
+    path: PATH.MEDIA,
+    element: <Media />
+  },
+  {
+    path: PATH.CONTRACT,
+    element: <Contract />
+  }
 ]
 
 

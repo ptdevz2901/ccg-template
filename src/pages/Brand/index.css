@@ -1,0 +1,58 @@
+.brand {
+    padding: 8rem 0;
+}
+
+.brand-section {
+    position: relative;
+}
+
+.brand-section .brand-section-title {
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: var(--text-second);
+    text-align: center;
+
+}
+
+.brand-section .brand-section-des {
+    font-weight: 400;
+    font-size: 3.5rem;
+    color: var(--text-second);
+    text-align: center;
+}
+
+.brand-section .brand-section_content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.brand-section .brand-section_content.reverse {
+    flex-direction: row-reverse;
+    gap: 6rem;
+}
+
+
+.brand-section .brand-section_content .brand-section_content-description {
+    font-weight: 300;
+    padding: 8rem 0rem 8rem 8rem;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    width: 50%;
+
+}
+
+.brand-section .brand-section_content .brand-section_content-img {
+    width: 50%;
+}
+
+.brand-section .brand-section_content .brand-section_content-img img {
+    width: 100%;
+}
+
+.brand-gradient {
+    position: absolute;
+    top: -14rem;
+    right: -0rem;
+    z-index: -1;
+}

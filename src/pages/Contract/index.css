@@ -1,0 +1,53 @@
+.contract {
+    padding: 10rem 0;
+}
+
+.contract .contract-title {
+    font-weight: 600;
+    text-align: center;
+    font-size: 4.6rem;
+    color: var(--text-primary);
+}
+
+.contract .contract-address .contract-address_wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contract .contract-address .contract-address_wrapper .contract-address_info {
+    display: flex;
+    align-items: center;
+}
+
+.contract .contract-address .contract-address_wrapper .contract-address_info p:first-child {
+    font-weight: 500;
+    font-size: 1.9rem;
+    color: var(--text-color);
+    width: 30%;
+}
+
+.contract .contract-address .contract-address_wrapper .contract-address_info p:last-child {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--text-color);
+    width: 70%;
+}
+
+.contract_firm-name {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+}
+
+.contract-maps iframe {
+    width: 100%;
+    height: 30rem;
+}
+
+.contract-maps {
+    width: 45%;
+}
+
+.contract-address-tag {
+    width: 55%;
+}
