@@ -1,0 +1,19 @@
+.textarea-wrapper label {
+    display: block;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.textarea-wrapper textarea {
+    border-radius: .9rem;
+    border: 1px solid #CECECE;
+    width: 100%;
+    padding: 2rem;
+    outline-color: rgb(107, 107, 218);
+    font-size: 1.9rem;
+
+    box-sizing: border-box;
+
+
+}

@@ -1,0 +1,14 @@
+.checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.9rem;
+    font-weight: 300;
+    color: var(--text-primary);
+}
+
+.checkbox-wrapper input {
+    width: 2.6rem;
+    height: 2.6rem;
+    border-radius: 0.7rem;
+}

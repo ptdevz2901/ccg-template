@@ -11,6 +11,7 @@
 
 .header-wrapper .header_logo img {
     width: 17.2rem;
+    cursor: pointer;
 }
 
 .header-wrapper .header_menu {

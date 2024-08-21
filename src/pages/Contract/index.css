@@ -1,11 +1,19 @@
 .contract {
     padding: 10rem 0;
+    position: relative;
 }
 
 .contract .contract-title {
     font-weight: 600;
     text-align: center;
     font-size: 4.6rem;
+    color: var(--text-primary);
+}
+
+.contract .contract-title_des {
+    font-weight: 300;
+    font-size: 1.9rem;
+    text-align: center;
     color: var(--text-primary);
 }
 
@@ -50,4 +58,51 @@
 
 .contract-address-tag {
     width: 55%;
+}
+
+.contract-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contract-form .form-wrapper .contract-policy {
+    font-weight: 300;
+    font-size: 1.9rem;
+    color: var(--text-primary);
+    text-align: center;
+}
+
+.form-wrapper {
+    width: 80%;
+}
+
+.contract-privacy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-wrapper .wrapper-btn {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.form-wrapper .wrapper-btn .button-submit {
+    padding: 2rem 5.1rem;
+    border-radius: 2rem;
+    background-color: var(--text-accent);
+    box-shadow: 0 1.4rem 3.7rem #5CC1FF70;
+    outline: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contract-gradient {
+    position: absolute;
+    top: -20rem;
+    right: 0rem;
+    z-index: -1;
 }

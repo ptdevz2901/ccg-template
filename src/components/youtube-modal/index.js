@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.css";
 
-export default function VideoModal({ modal, setModal }) {
+export default function VideoModal({ modal, setModal, videoSelected, setVideoSelected }) {
     const [videoLoading, setVideoLoading] = useState(true);
 
 
@@ -15,6 +15,7 @@ export default function VideoModal({ modal, setModal }) {
                 <section className="modal__bg">
                     <div className="modal__align" onClick={() => {
                         setModal(false)
+                        setVideoSelected('')
                     }}>
                         <div className="modal__content" modal={modal}>
                             <div onClick={setModal}>
@@ -32,7 +33,7 @@ export default function VideoModal({ modal, setModal }) {
                                     loading="lazy"
                                     width="800"
                                     height="500"
-                                    src="https://www.youtube.com/embed/4UZrsTqkcW4"
+                                    src={videoSelected}
                                     title="YouTube video player"
                                     frameBorder="0"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

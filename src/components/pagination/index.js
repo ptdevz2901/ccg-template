@@ -1,6 +1,8 @@
 import ReactPaginate from 'react-paginate'
 import './index.css'
-export const Pagination = () => {
+
+
+export const Pagination = ({ pageCount = 1 }) => {
     const handlePageClick = () => {
         console.log('cliked');
 
@@ -9,8 +11,8 @@ export const Pagination = () => {
         breakLabel="..."
         className='pagination-custom'
         onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={3}
+        pageRangeDisplayed={6}
+        pageCount={pageCount}
         renderOnZeroPageCount={null}
         previousLabel={null}
         nextLabel={null}

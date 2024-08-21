@@ -20,10 +20,21 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination'
 import { Pagination } from 'swiper/modules'
+import { useNavigate } from 'react-router-dom'
+import { PATH } from '../../consts/path'
+import { NEWS_DATA } from '../../data/news'
+import { MEDIA_DATA } from '../../data/media'
+import VideoModal from '../../components/youtube-modal'
+import { useState } from 'react'
+import playBtn from '../../resources/img/play-media.png'
+
 
 
 const items = Array.from({ length: 8 }, (_, index) => `Item ${index + 1}`);
 export const Home = () => {
+    const [open, setOpen] = useState(false)
+    const [videoSelected, setVideoSelected] = useState('')
+    const navigate = useNavigate()
     return <div className="home_wrapper">
         {/* NEWS */}
         <div className='wrapper-container'>
@@ -37,16 +48,24 @@ export const Home = () => {
                     <div className="home_content-des">
                         TO MAKE THE <span className="home_content-des--highlight">BEST SMILE</span> OVER THE WORLD
                     </div>
-                    <p className="home_content-sub">
+                    {/* <p className="home_content-sub">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
                         aliqua ut enim ad minim veniam, quis nostrud.
-                    </p>
+                    </p> */}
                     <div className='home_content-button'>
-                        <button className='home_content-button--highlight'>
+                        <button
+                            className='home_content-button--highlight'
+                            onClick={() => {
+                                navigate(PATH.CONTRACT)
+                            }}
+                        >
                             Get in touch
                             <img alt='svg' src={rightSvg} />
                         </button>
                         <BaseButton
+                            onClick={() => {
+                                navigate(PATH.ABOUT)
+                            }}
                             title={'See more'}
                         />
                     </div>
@@ -79,9 +98,15 @@ export const Home = () => {
                 </div>
                 <div className='home-about_content'>
                     <div className='home-about_content-title'>ABOUT OUR COMPANY</div>
-                    <div className='home-about_content-des'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam, quis nostrud.
+                    <div className='home-about_content-des'>Charion is a company that develops advanced dental oral care products and services in Japan.
+                        Meanwhile we are expanding our services not only in Japan but also overseas,
+                        and as an “innovator” in oral care industry, we create groundbreaking products and services
+                        with new ideas which only could created by venture companies.
                     </div>
                     <BaseButton
+                        onClick={() => {
+                            navigate(PATH.ABOUT)
+                        }}
                         title={'View more'}
                     />
                 </div>
@@ -111,7 +136,7 @@ export const Home = () => {
             </div>
         </div>
         {/* Testimonials */}
-        <div className='home_tesimonials'>
+        {/* <div className='home_tesimonials'>
             <div className='container'>
                 <h2 className='home_tesimonials-title'>TESTIMONIALS</h2>
                 <div className='home_tesimonials-swipper'>
@@ -191,87 +216,110 @@ export const Home = () => {
                     </Swiper>
                 </div>
             </div>
-        </div>
+        </div> */}
         {/* NEWS */}
-        <div className='home_blog container'>
-            <h2 className='home_blog-title'>NEWS</h2>
-            <img src={gradientBg} className='home_img-gradient' />
-            <div className='home_blog-card-wrapper'>
-                <div className='home_blog-card-vertical'>
-                    <div className='home_blog-card-vertical--img'>
-                        <img src='https://s3-alpha-sig.figma.com/img/5abc/f770/24978c219bf2223fc9e32ec5fae8375f?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=n09GjN5cUocJ7w5unTbKbokUZrHyE~j~qOiI5T33fWaqpjXz2r-DDKK~HATM-rggVVcNe3fkNQQGskd-GR5OHjrFhtrU7mJWyo5L1zMWhc1dnFQwRbhsd9-xLKvk6kwgGHrNLeHuZrYiUg0OGVGMJ4ruRsMLJqnoRO4i8ikvxSVXBwRkioNLVW2L~nVBK1vmjPLlV9USDk3oECg1aBmATBmda3tPbQ4jU-pNTNQCLwcbA2--WVcyGX5VsWKm8P~3puiE7ilFZ-6hdHsAgaRRx~OVuP0Py2plKsOtZOsqhyx6M2N-~7FN9-HsUffGyv8v~ziGDMDqdgkLckLT-OGdsw__' />
+        <div className="wrapper-container">
+            <div className='home_blog container'>
+                <h2 className='home_blog-title'>NEWS</h2>
+                <img src={gradientBg} className='home_img-gradient' />
+                <div className='home_blog-card-wrapper' onClick={() => {
+                    navigate(`/news-detail/${NEWS_DATA[0].id}`)
+                }}>
+                    <div className='home_blog-card-vertical'>
+                        <div className='home_blog-card-vertical--img'>
+                            <img src={NEWS_DATA[0].imageUrl} />
+                        </div>
+                        <div className='home_blog-card-vertical--content'>
+                            <div className='home_blog-card-vertical--tag'>
+                                {NEWS_DATA[0].tag}
+                            </div >
+                            <p className='home_blog-card-vertical--title'>{NEWS_DATA[0].title}</p>
+                            <p className='home_blog-card-vertical--sub'>{NEWS_DATA[0].description}</p>
+                            <a href='#' className='home_blog-card-vertical--readmore'>Read more</a>
+                        </div>
                     </div>
-                    <div className='home_blog-card-vertical--content'>
-                        <div className='home_blog-card-vertical--tag'>
-                            NEWS
-                        </div >
-                        <p className='home_blog-card-vertical--title'>Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</p>
-                        <p className='home_blog-card-vertical--sub'>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-                        <a href='#' className='home_blog-card-vertical--readmore'>Read more</a>
+                    <div className='home_blog-card-list'>
+                        {[...new Array(3)].map((_, idx) => {
+                            const index = idx + 1
+                            return <div className='home-blog-card-horizontal' key={idx} onClick={() => {
+                                navigate(`/news-detail/${NEWS_DATA[index].id}`)
+                            }}>
+                                <div className='home-blog-card-horizontal--img'>
+                                    <div className='home_blog-card-horizontal--tag'>
+                                        {NEWS_DATA[index].tag}
+                                    </div >
+                                    <img src={NEWS_DATA[index].imageUrl} alt={NEWS_DATA[index].title} />
+                                </div>
+                                <div className='home-blog-card-horizontal--content' >
+                                    <p className='home_blog-card-horizontal--title'>{NEWS_DATA[index].title}</p>
+                                    <p className='home_blog-card-horizontal--sub'>{NEWS_DATA[index].description}</p>
+                                </div>
+                            </div>
+                        })}
+
                     </div>
                 </div>
-                <div className='home_blog-card-list'>
-                    <div className='home-blog-card-horizontal'>
-                        <div className='home-blog-card-horizontal--img'>
-                            <div className='home_blog-card-horizontal--tag'>
-                                NEWS
-                            </div >
-                            <img src='https://s3-alpha-sig.figma.com/img/59e9/1cde/877aacb096082025aaa7528e15f2789e?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZZIPLv5EMo0kSspG2XjSoWbqe9o88Y3~gQUDAGbJ43NBlqKdgC~3rNE21j2b-nQCwnADy1uHN5fvNAFE4bsCb5~H5sVfzArhwYujV6uRR7cduXrUBmfub6clU4YmoB2Oy1rL1ExTUSwW3C5X2mUXn5TG7L29B7JWTIiSl-5QFjHLDe0HOPZRpnf~yoYNri13PwLAqBQId-zL3J4~znwVh9hHuNoSWANlLl0MlRJHsexQsfTMJoiN86qZHRbWhNkH4CuNCVrk7nm9MrX1bIw9OR~XVs~0qggAE8~EZuJWcs4BDGr9afoEC~xYNvZAeyITrkr3jfu01I9pAj2nT5a9jg__' alt='omg' />
-                        </div>
-                        <div className='home-blog-card-horizontal--content' >
-                            <p className='home_blog-card-horizontal--title'>Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</p>
-                            <p className='home_blog-card-horizontal--sub'>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-                        </div>
-                    </div>
-                    <div className='home-blog-card-horizontal'>
-                        <div className='home-blog-card-horizontal--img'>
-                            <div className='home_blog-card-horizontal--tag'>
-                                NEWS
-                            </div >
-                            <img src='https://s3-alpha-sig.figma.com/img/59e9/1cde/877aacb096082025aaa7528e15f2789e?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZZIPLv5EMo0kSspG2XjSoWbqe9o88Y3~gQUDAGbJ43NBlqKdgC~3rNE21j2b-nQCwnADy1uHN5fvNAFE4bsCb5~H5sVfzArhwYujV6uRR7cduXrUBmfub6clU4YmoB2Oy1rL1ExTUSwW3C5X2mUXn5TG7L29B7JWTIiSl-5QFjHLDe0HOPZRpnf~yoYNri13PwLAqBQId-zL3J4~znwVh9hHuNoSWANlLl0MlRJHsexQsfTMJoiN86qZHRbWhNkH4CuNCVrk7nm9MrX1bIw9OR~XVs~0qggAE8~EZuJWcs4BDGr9afoEC~xYNvZAeyITrkr3jfu01I9pAj2nT5a9jg__' alt='omg' />
-                        </div>
-                        <div className='home-blog-card-horizontal--content' >
-                            <p className='home_blog-card-horizontal--title'>Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</p>
-                            <p className='home_blog-card-horizontal--sub'>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-                        </div>
-                    </div>
-                    <div className='home-blog-card-horizontal'>
-                        <div className='home-blog-card-horizontal--img'>
-                            <div className='home_blog-card-horizontal--tag'>
-                                NEWS
-                            </div >
-                            <img src='https://s3-alpha-sig.figma.com/img/59e9/1cde/877aacb096082025aaa7528e15f2789e?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ZZIPLv5EMo0kSspG2XjSoWbqe9o88Y3~gQUDAGbJ43NBlqKdgC~3rNE21j2b-nQCwnADy1uHN5fvNAFE4bsCb5~H5sVfzArhwYujV6uRR7cduXrUBmfub6clU4YmoB2Oy1rL1ExTUSwW3C5X2mUXn5TG7L29B7JWTIiSl-5QFjHLDe0HOPZRpnf~yoYNri13PwLAqBQId-zL3J4~znwVh9hHuNoSWANlLl0MlRJHsexQsfTMJoiN86qZHRbWhNkH4CuNCVrk7nm9MrX1bIw9OR~XVs~0qggAE8~EZuJWcs4BDGr9afoEC~xYNvZAeyITrkr3jfu01I9pAj2nT5a9jg__' alt='omg' />
-                        </div>
-                        <div className='home-blog-card-horizontal--content' >
-                            <p className='home_blog-card-horizontal--title'>Class adds $30 million to its balance sheet for a Zoom-friendly edtech solution</p>
-                            <p className='home_blog-card-horizontal--sub'>Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates exclusively...</p>
-                        </div>
-                    </div>
+                <div className='home_blog-viewmore'>
+                    <BaseButton
+                        onClick={() => {
+                            navigate(PATH.NEWS)
+                        }}
+                        title={'View more'}
+                    />
                 </div>
-            </div>
-            <div className='home_blog-viewmore'>
-                <BaseButton
-                    title={'View more'}
-                />
             </div>
         </div>
+
         {/* Media */}
-        <div className='home_media container'>
+        {/* <div className='home_media container'>
             <h2 className='home_media-title'>MEDIA</h2>
             <div className='home_media-list'>
-                {[...new Array(6)].map((_, index) => {
+                {[...new Array(3)].map((_, index) => {
                     return <div className='home_media-item'>
-                        <img src='https://s3-alpha-sig.figma.com/img/eb95/127b/6e38c272eaf4db5d6e8bf6c9598978ca?Expires=1725235200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cK4NF4WW~rQ2R3dWsP6UtDnoyzBeVfp3k7mInRILUtxj~NeyNRpET3iKpkurRu9wNl6hJcMQm1jlb1RuYwC4BM0vrGMxso01ipuqsA7ef6VTchOy~2d6~AHJ4QSmeiTTWQ5TorZcvjmD-DWkbcaxV0rPjusi2WF~Pjg001sfJzDujKyQWSUPeZdRM6oXk019mbdTR7o4KDqKG78Gz~TgsP65jw~MEZmnCX0YDV083I2qRdIWs6nES~eFhO-RBsF2zC~xps1eeVGFTClopiGVEP-AYMe3U1g8h91dXgVAaJ3pQS19Arql3Z~TL8ZwWJDhZJsfcrkZsodsukI0mswTZw__' />
+                        <img src={MEDIA_DATA[index].imageUrl} />
                     </div>
                 })}
             </div>
             <div className='home_media-viewmore'>
                 <BaseButton
                     title={'View more'}
+                    onClick={() => {
+                        navigate(PATH.MEDIA)
+                    }}
                 />
             </div>
+        </div> */}
+        <div className="media wrapper-container">
+            <div className="container">
+                <VideoModal
+                    videoSelected={videoSelected}
+                    setVideoSelected={setVideoSelected}
+                    modal={open}
+                    setModal={setOpen}
+                />
+                <h2 className="media_title">MEDIA</h2>
+                <div className='media-list'>
+                    {[...new Array(3)].map((_, idx) => {
+                        const media = MEDIA_DATA[idx]
+                        return <div key={media.imageUrl} className='media-item' onClick={() => {
+                            setOpen(true)
+                            setVideoSelected(media.videoUrl)
+                        }}>
+                            <img className='media-play' src={playBtn} />
+                            <img src={media.imageUrl} alt={media.imageUrl} className='media-img' />
+                        </div>
+                    })}
+                </div>
+                <div className='home_media-viewmore'>
+                    <BaseButton
+                        title={'View more'}
+                        onClick={() => {
+                            navigate(PATH.MEDIA)
+                        }}
+                    />
+                </div>
+            </div>
         </div>
-
         {/* Media coverage */}
         <div className='container home-mediaCoverage'>
             <h2 className='home_mediaCoverage-title'>MEDIA COVERAGE</h2>

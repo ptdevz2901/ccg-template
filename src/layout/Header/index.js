@@ -2,6 +2,7 @@ import './index.css'
 import logo from '../../resources/img/logo.png'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { PATH } from '../../consts/path'
+import { useEffect } from 'react'
 
 
 const MENUS = [
@@ -51,9 +52,21 @@ const MENUS = [
 export const Header = () => {
     const navigate = useNavigate()
     const location = useLocation()
+
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }, [location])
     return <div className='wrapper-container border-header '>
         <header className="header-wrapper container">
-            <div className='header_logo'>
+            <div className='header_logo'
+                onClick={() => {
+                    navigate(PATH.HOME)
+                }}
+            >
                 <img alt='logo' src={logo} />
             </div>
             <ul className='header_menu'>
@@ -67,6 +80,19 @@ export const Header = () => {
                     >{menu.title}</li>
                 })}
             </ul>
+            {/* <div className='header_menu-moblie'>
+                <ul>
+                    {MENUS.map((menu) => {
+                        const activeClassName = location.pathname === menu.path ? 'active' : ''
+                        return <li
+                            className={`header_menu-item ${activeClassName}`}
+                            onClick={() => {
+                                navigate(menu.path)
+                            }}
+                        >{menu.title}</li>
+                    })}
+                </ul>
+            </div> */}
         </header>
     </div>
 }

@@ -23,6 +23,21 @@
     cursor: pointer;
 }
 
+.media .media-list .media-item::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0.3;
+}
+
+.media-pagination {
+    margin-top: 4rem;
+}
+
 .media .media-list .media-item .media-img {
     width: 100%;
     object-fit: cover;

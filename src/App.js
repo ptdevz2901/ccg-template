@@ -17,6 +17,9 @@ import { News } from './pages/News/News';
 import { Media } from './pages/Media/Media';
 import { Contract } from './pages/Contract/Contract';
 import { PATH } from './consts/path';
+import { Company } from './pages/Company';
+import { Sdgs } from './pages/Sdgs/Sdgs';
+import { NewsDetail } from './pages/NewsDetail/NewsDetail';
 
 const routes = [
   {
@@ -42,6 +45,18 @@ const routes = [
   {
     path: PATH.CONTRACT,
     element: <Contract />
+  },
+  {
+    path: PATH.COMPANY,
+    element: <Company />
+  },
+  {
+    path: PATH.SDGS,
+    element: <Sdgs />
+  },
+  {
+    path: PATH.NEWS_DETAIL,
+    element: <NewsDetail />
   }
 ]
 

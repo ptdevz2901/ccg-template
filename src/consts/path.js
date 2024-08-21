@@ -6,5 +6,6 @@ export const PATH = Object.freeze({
     MEDIA: '/media',
     SDGS: '/sdgs',
     CONTRACT: '/contract',
-    COMPANY: '/company'
+    COMPANY: '/company',
+    NEWS_DETAIL: '/news-detail/:id'
 })

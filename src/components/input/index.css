@@ -1,0 +1,34 @@
+.baseInput-wrapper input {
+    width: 100%;
+    height: 1rem;
+    padding: 2rem;
+    border: 0.1rem solid #CECECE;
+    border-radius: 0.9rem;
+    outline-color: rgb(107, 107, 218);
+
+    font-weight: 500;
+    color: #707275;
+    font-size: 1.9rem;
+
+
+    box-sizing: border-box;
+
+
+}
+
+.baseInput-wrapper label {
+    display: block;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.baseInput-error {
+    display: block;
+    color: red;
+    font-size: 1.5rem;
+    font-weight: 300;
+    height: 1.5rem;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
